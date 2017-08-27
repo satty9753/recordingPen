@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56574E3E1F51CCCD00A9E415 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56574E3D1F51CCCD00A9E415 /* PlayViewController.swift */; };
 		56DA56E11F3DB0A8005DA984 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA56E01F3DB0A8005DA984 /* AppDelegate.swift */; };
-		56DA56E31F3DB0A8005DA984 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA56E21F3DB0A8005DA984 /* ViewController.swift */; };
 		56DA56E61F3DB0A8005DA984 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DA56E41F3DB0A8005DA984 /* Main.storyboard */; };
 		56DA56E81F3DB0A8005DA984 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56DA56E71F3DB0A8005DA984 /* Assets.xcassets */; };
 		56DA56EB1F3DB0A8005DA984 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56DA56E91F3DB0A8005DA984 /* LaunchScreen.storyboard */; };
 		56DA56F61F3DB0A8005DA984 /* RecordPenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA56F51F3DB0A8005DA984 /* RecordPenTests.swift */; };
 		56DA57011F3DB0A8005DA984 /* RecordPenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DA57001F3DB0A8005DA984 /* RecordPenUITests.swift */; };
+		56E659E61F4062DA0032B494 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E659E51F4062DA0032B494 /* MainViewController.swift */; };
+		56E659E81F4095BB0032B494 /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E659E71F4095BB0032B494 /* RecordingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		56574E3D1F51CCCD00A9E415 /* PlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		56DA56DD1F3DB0A8005DA984 /* RecordPen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecordPen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DA56E01F3DB0A8005DA984 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		56DA56E21F3DB0A8005DA984 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		56DA56E51F3DB0A8005DA984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		56DA56E71F3DB0A8005DA984 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		56DA56EA1F3DB0A8005DA984 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +49,8 @@
 		56DA56FC1F3DB0A8005DA984 /* RecordPenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecordPenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56DA57001F3DB0A8005DA984 /* RecordPenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordPenUITests.swift; sourceTree = "<group>"; };
 		56DA57021F3DB0A8005DA984 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E659E51F4062DA0032B494 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		56E659E71F4095BB0032B494 /* RecordingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +102,10 @@
 			isa = PBXGroup;
 			children = (
 				56DA56E01F3DB0A8005DA984 /* AppDelegate.swift */,
-				56DA56E21F3DB0A8005DA984 /* ViewController.swift */,
 				56DA56E41F3DB0A8005DA984 /* Main.storyboard */,
+				56574E3D1F51CCCD00A9E415 /* PlayViewController.swift */,
+				56E659E51F4062DA0032B494 /* MainViewController.swift */,
+				56E659E71F4095BB0032B494 /* RecordingViewController.swift */,
 				56DA56E71F3DB0A8005DA984 /* Assets.xcassets */,
 				56DA56E91F3DB0A8005DA984 /* LaunchScreen.storyboard */,
 				56DA56EC1F3DB0A8005DA984 /* Info.plist */,
@@ -259,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56DA56E31F3DB0A8005DA984 /* ViewController.swift in Sources */,
+				56574E3E1F51CCCD00A9E415 /* PlayViewController.swift in Sources */,
+				56E659E61F4062DA0032B494 /* MainViewController.swift in Sources */,
+				56E659E81F4095BB0032B494 /* RecordingViewController.swift in Sources */,
 				56DA56E11F3DB0A8005DA984 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -507,6 +515,7 @@
 				56DA57071F3DB0A8005DA984 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56DA57081F3DB0A8005DA984 /* Build configuration list for PBXNativeTarget "RecordPenTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +524,7 @@
 				56DA570A1F3DB0A8005DA984 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56DA570B1F3DB0A8005DA984 /* Build configuration list for PBXNativeTarget "RecordPenUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +533,7 @@
 				56DA570D1F3DB0A8005DA984 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
