@@ -9,15 +9,14 @@
 import UIKit
 import AVFoundation
 
-class RecordingViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate{
+class RecordingViewController: UIViewController, AVAudioRecorderDelegate{
 
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordingButton: UIButton!
     @IBOutlet weak var playButton: UIButton!
     var audioRecorder: AVAudioRecorder!
-    var audioPlayer:AVAudioPlayer!
     var meterTimer:Timer!
-    var recordingDic = [String]()
+    var recordingDic = [["name":String(),"path":String()]]
     var isAudioRecordingGranted: Bool!
     var isRecording = false
     var isPlaying = false
@@ -61,7 +60,8 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate, AVAudi
          return documentsDirectory
     }
     func getFileUrl() -> URL
-    {   let date = Date()
+    {   var i = 0
+        let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd-"
         var filename = formatter.string(from: date)
@@ -72,7 +72,10 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate, AVAudi
         let seconds = String(calendar.component(.second, from: date))
         filename = filename + hour + minutes + seconds + ".m4a"
         let filePath = getDocumentsDirectory().appendingPathComponent(filename)
-        recordingDic.append(filename)
+        let filePathString = filePath.path
+        recordingDic[i]["name"] = filename
+        recordingDic[i]["path"] = filePathString
+        i += 1
         print("filename: ",filename)
         return filePath
     }
@@ -103,38 +106,7 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate, AVAudi
         
     }
     
-    func preparePlay(){
-        do{
-            audioPlayer = try AVAudioPlayer(contentsOf: getFileUrl())
-            audioPlayer.delegate = self
-            audioPlayer.prepareToPlay()
-        }
-        catch{
-            print("play error")
-        }
-    }
-    
-    @IBAction func playRecording(_ sender: Any) {
-        if(isPlaying){
-            audioPlayer.stop()
-            playButton.setTitle("Stop", for: .normal)
-            isPlaying = false
-        }
-        else{
-            if FileManager.default.fileExists(atPath: getFileUrl().path){
-              preparePlay()
-              audioPlayer.play()
-              playButton.setTitle("Play", for: .normal)
-              isPlaying = true
-            }
-            else{
-                displayAlert(title: "錯誤", description: "檔案不存在", aciton: "QQ")
-            }
-        }
-        
-        
-    }
-    @IBAction func startRecording(_ sender: Any) {
+     @IBAction func startRecording(_ sender: Any) {
         if isRecording==true{
             finishAudioRecording(success: true)
             isRecording=false
@@ -192,11 +164,10 @@ class RecordingViewController: UIViewController, AVAudioRecorderDelegate, AVAudi
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-          let controller = segue.destination as? MainViewController
-           controller?.recordArray = recordingDic
-           present(controller!, animated: true, completion: nil)
-        
-           }
+        if let controller = segue.destination as? MainViewController{
+             controller.recordArray = recordingDic
+        }
+    }
     
 
 }

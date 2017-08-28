@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--錄音-->
+        <!--recording-->
         <scene sceneID="JNT-4a-rcq">
             <objects>
                 <viewController id="07h-Os-eeb" customClass="RecordingViewController" customModule="RecordPen" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,18 +28,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtG-qQ-pA6">
-                                <rect key="frame" x="164" y="498" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="playRecording:" destination="07h-Os-eeb" eventType="touchUpInside" id="wXi-0X-Wtv"/>
-                                </connections>
-                            </button>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="dXU-so-bZW">
-                                <rect key="frame" x="-2" y="436" width="379" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhz-Gm-o64">
                                 <rect key="frame" x="122" y="203" width="130" height="130"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -51,7 +39,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="錄音" id="avE-HZ-lMO">
+                    <navigationItem key="navigationItem" title="recording" id="avE-HZ-lMO">
                         <barButtonItem key="rightBarButtonItem" systemItem="organize" id="nAi-LN-rzi">
                             <connections>
                                 <segue destination="wnC-s6-qsi" kind="show" id="vZm-yc-kWS"/>
@@ -59,7 +47,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="playButton" destination="TtG-qQ-pA6" id="jhH-8c-HrH"/>
                         <outlet property="recordingButton" destination="Qhz-Gm-o64" id="HXQ-jq-lsm"/>
                         <outlet property="recordingLabel" destination="jbD-LX-oU4" id="yq2-UE-yzy"/>
                     </connections>
@@ -68,7 +55,7 @@
             </objects>
             <point key="canvasLocation" x="3242.4000000000001" y="-18.440779610194905"/>
         </scene>
-        <!--紀錄-->
+        <!--Table-->
         <scene sceneID="ur2-7O-7OZ">
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="wnC-s6-qsi" customClass="MainViewController" customModule="RecordPen" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,9 +106,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="紀錄" id="JKV-XM-eKC">
-                        <barButtonItem key="rightBarButtonItem" title="編輯" id="5aE-NP-LNx"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Table" id="JKV-XM-eKC"/>
                     <connections>
                         <outlet property="searchBar" destination="nUb-X8-rjG" id="74b-hR-w9f"/>
                         <outlet property="tableView" destination="Mu8-dF-fx8" id="GB1-qe-fv1"/>
@@ -129,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8MK-A2-t5S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4281" y="4"/>
+            <point key="canvasLocation" x="4213.6000000000004" y="1.3493253373313345"/>
         </scene>
         <!--Play View Controller-->
         <scene sceneID="BxN-he-dRO">
@@ -167,7 +152,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S43-vI-nrV">
                                 <rect key="frame" x="147" y="425" width="79" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="circled_play1600"/>
+                                <state key="normal" title="Play"/>
                                 <connections>
                                     <action selector="pressToPlay:" destination="lvd-EH-NMz" eventType="touchUpInside" id="cvM-xI-Eoc"/>
                                 </connections>
@@ -177,7 +162,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dKp-xA-RJO">
-                                <rect key="frame" x="178" y="119" width="170" height="31"/>
+                                <rect key="frame" x="124" y="119" width="224" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -194,10 +179,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Title" id="hAE-2e-N5B">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" id="eUh-jZ-c4C">
+                                    <navigationItem title="Play" id="hAE-2e-N5B">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="eUh-jZ-c4C">
                                             <connections>
                                                 <action selector="backToPreviousPage:" destination="lvd-EH-NMz" id="tJg-hm-Nee"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Share" id="o96-dk-ywJ">
+                                            <connections>
+                                                <action selector="shareFiles:" destination="lvd-EH-NMz" id="DKJ-YM-5bM"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -214,7 +204,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9S9-FU-QMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5222" y="3"/>
+            <point key="canvasLocation" x="5109.6000000000004" y="0.44977511244377816"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xt7-gj-qTf">
@@ -236,7 +226,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="circled_play1600" width="1600" height="1600"/>
         <image name="microphone" width="1024" height="1024"/>
     </resources>
 </document>
